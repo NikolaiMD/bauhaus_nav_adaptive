@@ -1,0 +1,156 @@
+body{
+  background-color: #272727;
+  font-family: arial;
+  overflow: visible;
+  height: 100000px;
+}
+a{
+  color: white;
+  text-decoration: none;
+}
+a:hover{
+  color: #cee002;
+}
+.container{
+  margin-right: 60px;
+  margin-left: 60px;
+  overflow: visible;
+  /* border: 1px dotted green; */
+}
+nav.container{
+  height: 100px;
+  box-sizing: border-box;
+  padding-top: 30px;
+  background-color: #272727;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  overflow: visible;
+}
+ul{
+  display: inline-block;
+}
+nav.container li{
+  display: inline-block;
+  /* float: left; */
+}
+/*****************************ЛЕВЫЙ СЕКТОР НАВИГАЦИИ***************************/
+.brand{
+  position: relative;
+  /* float: left; */
+  width: 63%;
+  height: 32px;
+  /* background-color: green; */
+  /* padding-right: 40px; */
+}
+.logo:before{
+  content: "\25AC";
+  color: #272727;
+  display: block;
+  transform: rotate(-45deg) translate(-10px, -6px);
+}
+.logo{
+  display: block;
+  height: 22px;
+  width: 22px;
+  border: 5px solid white;
+}
+.first{
+  display: block;
+  position: relative;
+  font-size: 28px;
+  font-weight: bold;
+  width: 0;
+  height: 0;
+  top: -35px;
+  left: 45px;
+  color: white;
+}
+.brand li:first-child>a span:last-child{
+  display: block;
+  position: relative;
+  font-size: 13px;
+  width: 0;
+  height: 0;
+  color: grey;
+  top: -11px;
+  left: 45px;
+  transition: 0.2s;
+}
+.brand li:last-child{
+  float: right;
+  /* width: 60%; */
+  margin-top: 11px;
+  /* margin-right: 40px; */
+}
+.brand li:last-child>a{
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+}
+.brand li:last-child>a>span{
+  color: grey;
+  text-transform: uppercase;
+}
+/**************************ПРАВЫЙ СЕТОР НАВИГАЦИИ******************************/
+.menu{
+  float: right;
+  /* background-color: red; */
+  position: relative;
+  height: 46px;
+  width: 390px;
+  border-left: 1px solid grey;
+  margin-top: -3px;
+}
+.menu>li>a{
+  /* display: inline-block; */
+}
+.menu li:first-child{
+  margin-left: 60px;
+  font-size: 22px;
+  margin-top: 10px;
+}
+.menu li:nth-child(2),li:nth-child(3),li:nth-child(4),li:nth-child(5),li:last-child{
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 25px;
+  font-size: 18px;
+}
+.menu>li:last-child{
+  position: absolute;
+  font-size: 30px;
+  right: 0;
+  top: 8px;
+}
+/***********************************MEDIA**************************************/
+@media screen and (max-width: 1195px) {
+  .container>.brand>li:nth-child(2)
+  {
+    display: none;
+    transition: 0.2s;
+  }
+  .container>.brand
+  {
+    width: 40%;
+  }
+  .container>.menu
+  {
+    border-left: 1px solid transparent;
+    width: 390px;
+  }
+}
+@media screen and (max-width: 791px) {
+  .container>.menu{
+    width: 40px;
+  }
+  .container>.menu>li:not(:last-child)
+  {
+    display: none;
+  }
+  .container>.menu>li:last-child
+  {
+    width: 100%;
+  }
+}
